@@ -263,3 +263,14 @@ document.addEventListener('DOMContentLoaded', () => {
   renderNewsHome();
   initScrollReveal();
 });
+
+
+
+
+/*videos: [
+      { title: "Swami Vivekananda Jayanti 2024", youtubeId: "Qkm4zwVxrK4" },
+      { title: "Evening Arati at RKVA Bidar", youtubeId: "IsHpwt8qGhM" },
+      { title: "Youth Camp 2023 Highlights", youtubeId: "nhiU1Gk3BZc" },
+      { title: "Guru Purnima Celebrations", youtubeId: "haSn5ksVjMg" }
+    ]
+  },

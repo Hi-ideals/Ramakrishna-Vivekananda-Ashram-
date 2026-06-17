@@ -136,10 +136,12 @@ function renderHeader() {
       <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <div class="flex items-center justify-between py-3 lg:py-4">
           <a href="index.html" class="flex items-center gap-3 shrink-0">
-            <span class="text-3xl">🕉</span>
+          <img class="h-12 w-auto" src="assets/images/Ramakrishna Vivekanada Aahrama.png" alt="">
             <span class="font-display font-bold text-lg sm:text-xl leading-tight text-[var(--maroon)]">
               Ramakrishna Vivekananda<br class="hidden sm:block"> <span class="sm:hidden"> </span>Ashrama, Bidar
-            </span>
+            </span><span class="text-3xl"></span>
+           
+            
           </a>
           <nav class="hidden lg:flex items-center">${desktopNav}</nav>
           <button id="mobile-menu-btn" type="button" aria-label="Open menu" class="lg:hidden p-2 text-[var(--maroon)]">
@@ -275,3 +277,6 @@ function initScrollReveal() {
 document.addEventListener('DOMContentLoaded', () => {
   mountLayout();
 });
+
+
+/**/
