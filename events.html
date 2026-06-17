@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News &amp; Events — Ramakrishna Vivekananda Ashrama, Bidar</title>
+  <meta name="description" content="Latest news, events, and celebrations at Ramakrishna Vivekananda Ashrama, Bidar.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=Lato:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased">
+
+  <div id="site-header-mount"></div>
+
+  <!-- ============ PAGE HEADER ============ -->
+  <section class="relative bg-[var(--primary-dark)] py-20 sm:py-28 overflow-hidden">
+    <div class="absolute inset-0 opacity-25" style="background-image:url('https://picsum.photos/1600/600?random=103');background-size:cover;background-position:center;"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-[var(--primary-dark)] via-[var(--primary-dark)]/70 to-[var(--primary-dark)]/40"></div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <span class="tag-eyebrow" style="color: var(--gold);">✿ Stay Connected</span>
+      <h1 class="font-display font-bold text-4xl sm:text-6xl text-white mt-3">News &amp; Events</h1>
+      <p class="text-white/75 mt-4 max-w-xl mx-auto">Celebrations, retreats, and outreach programmes from across the Ashrama</p>
+    </div>
+  </section>
+
+  <!-- ============ NEWS GRID ============ -->
+  <section class="bg-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="events-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============ DETAIL MODAL ============ -->
+  <div id="event-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" style="background: rgba(10,4,0,0.85);">
+    <div class="bg-[var(--cream)] rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto relative">
+      <button id="event-modal-close" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/80 flex items-center justify-center text-[var(--text-dark)] hover:bg-[var(--saffron)] hover:text-white transition-colors" aria-label="Close">
+        <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current"><path d="M18.3 5.71L12 12.01l-6.3-6.3-1.41 1.41 6.3 6.3-6.3 6.29 1.41 1.41 6.3-6.29 6.3 6.29 1.41-1.41-6.3-6.29 6.3-6.3z"/></svg>
+      </button>
+      <img id="event-modal-image" class="w-full h-56 sm:h-72 object-cover rounded-t-2xl" alt="">
+      <div class="p-6 sm:p-8">
+        <span id="event-modal-date" class="text-xs text-[var(--text-muted)] font-semibold"></span>
+        <h2 id="event-modal-title" class="font-display font-bold text-2xl sm:text-3xl text-[var(--text-dark)] mt-2 mb-4"></h2>
+        <p id="event-modal-body" class="text-[var(--text-muted)] leading-relaxed"></p>
+      </div>
+    </div>
+  </div>
+
+  <div id="site-footer-mount"></div>
+
+  <script src="content.js"></script>
+  <script src="common.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const grid = document.getElementById('events-grid');
+      const modal = document.getElementById('event-modal');
+      const modalImg = document.getElementById('event-modal-image');
+      const modalDate = document.getElementById('event-modal-date');
+      const modalTitle = document.getElementById('event-modal-title');
+      const modalBody = document.getElementById('event-modal-body');
+
+      function openModal(n) {
+        modalImg.src = n.image;
+        modalImg.alt = n.title;
+        modalDate.textContent = formatDate(n.date);
+        modalTitle.textContent = n.title;
+        modalBody.textContent = n.body;
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeModal() {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = '';
+      }
+      document.getElementById('event-modal-close').addEventListener('click', closeModal);
+      modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+      [...SITE.news].sort((a, b) => new Date(b.date) - new Date(a.date)).forEach(n => {
+        const card = el(`
+          <article class="reveal bg-[var(--cream)] rounded-2xl overflow-hidden shadow-sm flex flex-col cursor-pointer group">
+            <div class="overflow-hidden">
+              <img src="${n.image}" alt="${n.title}" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105">
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <span class="text-xs text-[var(--text-muted)] font-semibold mb-2">${formatDate(n.date)}</span>
+              <h3 class="font-display font-bold text-lg text-[var(--text-dark)] mb-2 leading-snug">${n.title}</h3>
+              <p class="text-sm text-[var(--text-muted)] leading-relaxed mb-4 flex-1">${n.excerpt}</p>
+              <span class="text-[var(--saffron)] font-semibold text-sm">Read More →</span>
+            </div>
+          </article>`);
+        card.addEventListener('click', () => openModal(n));
+        grid.appendChild(card);
+      });
+
+      initScrollReveal();
+    });
+
+    function formatDate(iso) {
+      const d = new Date(iso + 'T00:00:00');
+      return d.toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
+    }
+  </script>
+</body>
+</html>

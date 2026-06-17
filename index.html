@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ramakrishna Vivekananda Ashrama, Bidar</title>
+  <meta name="description" content="Ramakrishna Vivekananda Ashrama, Bidar — a spiritual, educational, and service-oriented organization inspired by Sri Ramakrishna and Swami Vivekananda.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=Lato:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased">
+
+  <div id="site-header-mount"></div>
+
+  <!-- ============ HERO SLIDER ============ -->
+  <section class="hero-slider" id="hero-slider">
+    <!-- slides injected by JS -->
+    <button class="hero-arrow" style="left:1rem;" id="hero-prev" aria-label="Previous slide">
+      <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current"><path d="M15 5l-7 7 7 7V5z"/></svg>
+    </button>
+    <button class="hero-arrow" style="right:1rem;" id="hero-next" aria-label="Next slide">
+      <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current"><path d="M9 5l7 7-7 7V5z"/></svg>
+    </button>
+    <div class="absolute bottom-6 left-0 right-0 flex justify-center gap-2 z-10" id="hero-dots"></div>
+  </section>
+
+  <!-- ============ FOUR PILLARS ============ -->
+  <section class="bg-[var(--cream)] py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="pillars-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="bg-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-14 items-center">
+      <!-- image collage -->
+      <div class="relative h-[420px] sm:h-[460px]" id="about-collage"></div>
+      <!-- text -->
+      <div>
+        <span class="tag-eyebrow">✿ About the Ashrama</span>
+        <h2 class="font-display font-bold text-4xl sm:text-5xl text-[var(--text-dark)] mt-3 mb-2" id="about-heading"></h2>
+        <div class="section-divider on-white" style="margin-left:0;margin-right:auto;"></div>
+        <p class="text-[var(--text-muted)] leading-relaxed mb-6" id="about-body"></p>
+        <p class="font-display italic text-2xl text-[var(--saffron)] mb-8" id="about-motto"></p>
+        <div class="flex items-center gap-10 flex-wrap">
+          <a href="about.html" class="btn-outline-saffron">Read More</a>
+          <div>
+            <span class="font-display font-bold text-6xl sm:text-7xl text-[var(--saffron)]" id="years-counter">0</span>
+            <p class="text-sm text-[var(--text-muted)] font-semibold mt-1">Years of Ashrama Services</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OUR INSPIRATION ============ -->
+  <section class="py-20" style="background: var(--tan);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+      <span class="tag-eyebrow">✿ Our Ramakrishna Vivekananda Ashrama</span>
+      <h2 class="font-display font-bold text-4xl sm:text-5xl text-[var(--text-dark)] mt-3">Our Inspiration</h2>
+      <div class="section-divider on-tan"></div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-10" id="inspiration-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============ ACTIVITIES & SERVICES ============ -->
+  <section class="bg-[var(--cream)] py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+      <span class="tag-eyebrow">✿ What We Offer</span>
+      <h2 class="font-display font-bold text-4xl sm:text-5xl text-[var(--text-dark)] mt-3">Activities &amp; Services</h2>
+      <div class="section-divider"></div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 text-left" id="activities-grid"></div>
+      <a href="activities.html" class="btn-saffron mt-10">View All Activities</a>
+    </div>
+  </section>
+
+  <!-- ============ DAILY QUOTE ============ -->
+  <section class="quote-section py-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center relative">
+      <span class="quote-mark font-display block">&ldquo;</span>
+      <p class="font-display italic text-2xl sm:text-3xl text-white/90 leading-relaxed -mt-10" id="quote-text"></p>
+      <div class="flex items-center justify-center gap-3 mt-8">
+        <img id="quote-avatar" class="w-12 h-12 rounded-full object-cover gold-border" alt="">
+        <span class="text-[var(--gold)] font-semibold" id="quote-author"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ARATI TIMINGS ============ -->
+  <section class="bg-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+      <span class="tag-eyebrow">✿ Join Us In Worship</span>
+      <h2 class="font-display font-bold text-4xl sm:text-5xl text-[var(--text-dark)] mt-3">Daily Worship &amp; Arati</h2>
+      <div class="section-divider on-white"></div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-10" id="arati-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============ DONATE SPLIT ============ -->
+  <section class="grid lg:grid-cols-2" id="donate-section">
+    <div class="bg-[var(--maroon)] text-white py-20 px-6 sm:px-12 flex flex-col justify-center">
+      <span class="tag-eyebrow" style="color: var(--gold);">✿ Donate Online</span>
+      <h2 class="font-display font-bold text-4xl sm:text-5xl mt-3 mb-5">Support Our Sacred Mission</h2>
+      <p class="text-white/85 leading-relaxed mb-8" id="donate-body"></p>
+      <a href="donate.html#indian" class="btn-saffron w-fit">Donate Now (Indian Citizens)</a>
+    </div>
+    <div class="min-h-[320px]" id="donate-image" style="background-size:cover;background-position:center;"></div>
+  </section>
+
+  <!-- ============ WHAT WE DO + TESTIMONIALS ============ -->
+  <section class="bg-[var(--cream)] py-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center">
+      <span class="tag-eyebrow">✿ Our Mission</span>
+      <h2 class="font-display font-bold text-4xl sm:text-5xl text-[var(--text-dark)] mt-3">What We Do?</h2>
+      <div class="section-divider"></div>
+      <p class="font-display font-semibold text-xl sm:text-2xl text-[var(--text-dark)] leading-relaxed mt-6" id="whatwedo-body"></p>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-16 relative">
+      <div class="overflow-hidden">
+        <div class="testimonial-track" id="testimonial-track"></div>
+      </div>
+      <div class="flex justify-center gap-3 mt-8">
+        <button id="testimonial-prev" aria-label="Previous testimonials" class="hero-arrow !static !bg-[var(--saffron)]/10 !text-[var(--saffron)]">
+          <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current"><path d="M15 5l-7 7 7 7V5z"/></svg>
+        </button>
+        <button id="testimonial-next" aria-label="Next testimonials" class="hero-arrow !static !bg-[var(--saffron)]/10 !text-[var(--saffron)]">
+          <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current"><path d="M9 5l7 7-7 7V5z"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LATEST NEWS & EVENTS ============ -->
+  <section class="bg-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+      <span class="tag-eyebrow">✿ Stay Updated</span>
+      <h2 class="font-display font-bold text-4xl sm:text-5xl text-[var(--text-dark)] mt-3">Latest News &amp; Events</h2>
+      <div class="section-divider on-white"></div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10 text-left" id="news-grid"></div>
+      <a href="events.html" class="btn-saffron mt-10">View All</a>
+    </div>
+  </section>
+
+  <div id="site-footer-mount"></div>
+
+  <script src="content.js"></script>
+  <script src="common.js"></script>
+  <script src="home.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Ramakrishna Vivekananda Ashrama, Bidar</title>
+  <meta name="description" content="The history, philosophy, and guiding principles of Ramakrishna Vivekananda Ashrama, Bidar.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=Lato:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased">
+
+  <div id="site-header-mount"></div>
+
+  <!-- ============ PAGE HEADER ============ -->
+  <section class="relative bg-[var(--primary-dark)] py-20 sm:py-28 overflow-hidden">
+    <div class="absolute inset-0 opacity-25" style="background-image:url('https://picsum.photos/1600/600?random=100');background-size:cover;background-position:center;"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-[var(--primary-dark)] via-[var(--primary-dark)]/70 to-[var(--primary-dark)]/40"></div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <span class="tag-eyebrow" style="color: var(--gold);">✿ Know Us</span>
+      <h1 class="font-display font-bold text-4xl sm:text-6xl text-white mt-3">History of RKVA</h1>
+      <p class="text-white/75 mt-4 max-w-xl mx-auto">The story, philosophy, and guiding principles of our Ashrama</p>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT INTRO ============ -->
+  <section class="bg-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-14 items-center">
+      <div class="relative h-[420px] sm:h-[460px]" id="about-page-collage"></div>
+      <div>
+        <span class="tag-eyebrow">✿ About the Ashrama</span>
+        <h2 class="font-display font-bold text-4xl text-[var(--text-dark)] mt-3 mb-4" id="about-page-heading"></h2>
+        <p class="text-[var(--text-muted)] leading-relaxed mb-5" id="about-page-body"></p>
+        <p class="font-display italic text-2xl text-[var(--saffron)]" id="about-page-motto"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HISTORY ============ -->
+  <section class="py-20" style="background: var(--tan);">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <span class="tag-eyebrow">✿ Our Journey</span>
+      <h2 class="font-display font-bold text-4xl text-[var(--text-dark)] mt-3">History of the Ashrama</h2>
+      <div class="section-divider on-tan"></div>
+      <p class="text-[var(--text-muted)] leading-relaxed text-left sm:text-center mb-5" id="history-body-1"></p>
+      <p class="text-[var(--text-muted)] leading-relaxed text-left sm:text-center" id="history-body-2"></p>
+    </div>
+  </section>
+
+  <!-- ============ GUIDING PRINCIPLES / IDEALS ============ -->
+  <section class="bg-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+      <span class="tag-eyebrow">✿ What We Stand For</span>
+      <h2 class="font-display font-bold text-4xl text-[var(--text-dark)] mt-3">Guiding Principles</h2>
+      <div class="section-divider on-white"></div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-10" id="ideals-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============ RAMAKRISHNA ORDER ============ -->
+  <section id="order" class="quote-section py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center relative">
+      <span class="tag-eyebrow" style="color: var(--gold);">✿ Our Lineage</span>
+      <h2 class="font-display font-bold text-4xl text-white mt-3 mb-6" id="order-heading"></h2>
+      <p class="text-white/80 leading-relaxed" id="order-body"></p>
+    </div>
+  </section>
+
+  <!-- ============ CTA STRIP ============ -->
+  <section class="bg-[var(--cream)] py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+      <h3 class="font-display font-bold text-3xl text-[var(--text-dark)] mb-4">Want to learn more about our founding inspirations?</h3>
+      <a href="inspiration.html" class="btn-saffron">Meet Our Inspiration</a>
+    </div>
+  </section>
+
+  <div id="site-footer-mount"></div>
+
+  <script src="content.js"></script>
+  <script src="common.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const { about } = SITE;
+      document.getElementById('about-page-heading').textContent = about.heading;
+      document.getElementById('about-page-body').textContent = about.body;
+      document.getElementById('about-page-motto').textContent = `“${about.motto}” — ${about.mottoTranslation}`;
+
+      const collage = document.getElementById('about-page-collage');
+      collage.appendChild(el(`<img src="${about.images[0]}" class="absolute top-0 left-0 w-2/3 rounded-2xl gold-border shadow-lg object-cover h-3/5" alt="Ashrama campus">`));
+      collage.appendChild(el(`<img src="${about.images[1]}" class="absolute bottom-0 right-0 w-2/3 rounded-2xl gold-border shadow-lg object-cover h-3/5" alt="Ashrama activity">`));
+      collage.appendChild(el(`<span class="absolute -top-2 -right-2 sm:right-8 text-5xl">🕉</span>`));
+
+      document.getElementById('history-body-1').textContent = about.history;
+      document.getElementById('history-body-2').textContent = about.extendedHistory;
+
+      const idealsGrid = document.getElementById('ideals-grid');
+      about.ideals.forEach((idea, i) => {
+        idealsGrid.appendChild(el(`
+          <div class="reveal bg-[var(--cream)] rounded-2xl p-7 border-t-4 border-[var(--saffron)]">
+            <span class="text-3xl">✿</span>
+            <h3 class="font-display font-bold text-xl text-[var(--text-dark)] mt-3 mb-2">${idea.title}</h3>
+            <p class="text-sm text-[var(--text-muted)] leading-relaxed">${idea.desc}</p>
+          </div>`));
+      });
+
+      document.getElementById('order-heading').textContent = about.order.heading;
+      document.getElementById('order-body').textContent = about.order.body;
+
+      initScrollReveal();
+    });
+  </script>
+</body>
+</html>

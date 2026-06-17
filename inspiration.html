@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Inspiration — Ramakrishna Vivekananda Ashrama, Bidar</title>
+  <meta name="description" content="Sri Ramakrishna, Sri Sarada Devi, and Swami Vivekananda — the founding inspirations of Ramakrishna Vivekananda Ashrama, Bidar.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=Lato:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased">
+
+  <div id="site-header-mount"></div>
+
+  <!-- ============ PAGE HEADER ============ -->
+  <section class="relative bg-[var(--primary-dark)] py-20 sm:py-28 overflow-hidden">
+    <div class="absolute inset-0 opacity-25" style="background-image:url('https://picsum.photos/1600/600?random=101');background-size:cover;background-position:center;"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-[var(--primary-dark)] via-[var(--primary-dark)]/70 to-[var(--primary-dark)]/40"></div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <span class="tag-eyebrow" style="color: var(--gold);">✿ Our Roots</span>
+      <h1 class="font-display font-bold text-4xl sm:text-6xl text-white mt-3">Our Inspiration</h1>
+      <p class="text-white/75 mt-4 max-w-xl mx-auto">The three guiding lights of the Ramakrishna Vivekananda movement</p>
+    </div>
+  </section>
+
+  <!-- ============ TAB NAV ============ -->
+  <div class="sticky top-[var(--tabbar-offset,0)] z-30 bg-white border-b border-amber-900/10">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 flex justify-center gap-2 sm:gap-6 overflow-x-auto" id="tab-nav"></div>
+  </div>
+
+  <!-- ============ SECTIONS ============ -->
+  <div id="inspiration-sections"></div>
+
+  <div id="site-footer-mount"></div>
+
+  <script src="content.js"></script>
+  <script src="common.js"></script>
+  <script>
+    function renderInspirationPage() {
+      const tabNav = document.getElementById('tab-nav');
+      const sectionsWrap = document.getElementById('inspiration-sections');
+
+      SITE.inspiration.forEach((person, i) => {
+        tabNav.appendChild(el(`
+          <a href="#${person.id}" class="tab-link px-4 py-3 text-sm sm:text-base font-semibold text-[var(--text-muted)] hover:text-[var(--saffron)] border-b-2 border-transparent transition-colors whitespace-nowrap" data-id="${person.id}">
+            ${person.name}
+          </a>`));
+
+        const flip = i % 2 === 1;
+        sectionsWrap.appendChild(el(`
+          <section id="${person.id}" class="${i % 2 === 0 ? 'bg-white' : 'bg-[var(--tan)]'} py-20 scroll-mt-24">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 items-center ${flip ? 'lg:[&>*:first-child]:order-2' : ''}">
+              <div class="reveal">
+                <img src="${person.image}" alt="${person.name}" class="w-full max-w-sm mx-auto rounded-2xl gold-border shadow-lg aspect-[3/4] object-cover">
+              </div>
+              <div class="reveal">
+                <span class="tag-eyebrow">✿ ${person.years}</span>
+                <h2 class="font-display font-bold text-4xl text-[var(--text-dark)] mt-3 mb-5">${person.name}</h2>
+                <p class="text-[var(--text-muted)] leading-relaxed mb-4">${person.bio}</p>
+                <p class="text-[var(--text-muted)] leading-relaxed mb-6">${person.extendedBio}</p>
+                <blockquote class="font-display italic text-2xl text-[var(--saffron)] border-l-4 border-[var(--saffron)] pl-5">
+                  “${person.quote}”
+                </blockquote>
+              </div>
+            </div>
+          </section>`));
+      });
+
+      // active tab highlighting via scroll
+      const tabs = tabNav.querySelectorAll('.tab-link');
+      const sections = sectionsWrap.querySelectorAll('section');
+      function setActive(id) {
+        tabs.forEach(t => t.classList.toggle('border-[var(--saffron)]', t.dataset.id === id));
+        tabs.forEach(t => t.classList.toggle('text-[var(--saffron)]', t.dataset.id === id));
+      }
+      if ('IntersectionObserver' in window) {
+        const obs = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) setActive(entry.target.id);
+          });
+        }, { threshold: 0.4 });
+        sections.forEach(s => obs.observe(s));
+      }
+      // initial state from hash
+      const hashId = window.location.hash.replace('#', '');
+      setActive(hashId || SITE.inspiration[0].id);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderInspirationPage();
+      initScrollReveal();
+    });
+  </script>
+</body>
+</html>

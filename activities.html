@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activities &amp; Services — Ramakrishna Vivekananda Ashrama, Bidar</title>
+  <meta name="description" content="Spiritual, educational, and welfare activities and services offered by Ramakrishna Vivekananda Ashrama, Bidar.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=Lato:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased">
+
+  <div id="site-header-mount"></div>
+
+  <!-- ============ PAGE HEADER ============ -->
+  <section class="relative bg-[var(--primary-dark)] py-20 sm:py-28 overflow-hidden">
+    <div class="absolute inset-0 opacity-25" style="background-image:url('https://picsum.photos/1600/600?random=102');background-size:cover;background-position:center;"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-[var(--primary-dark)] via-[var(--primary-dark)]/70 to-[var(--primary-dark)]/40"></div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <span class="tag-eyebrow" style="color: var(--gold);">✿ Service in Action</span>
+      <h1 class="font-display font-bold text-4xl sm:text-6xl text-white mt-3">Activities &amp; Services</h1>
+      <p class="text-white/75 mt-4 max-w-xl mx-auto">Spiritual, educational, and welfare initiatives carried out in a spirit of selfless service</p>
+    </div>
+  </section>
+
+  <!-- ============ ACTIVITIES DETAIL LIST ============ -->
+  <section class="bg-[var(--cream)] py-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div id="activities-detail-list" class="space-y-12"></div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="quote-section py-16">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 text-center relative">
+      <h3 class="font-display font-bold text-3xl text-white mb-5">Your support helps us continue this service</h3>
+      <a href="donate.html" class="btn-saffron">Support Our Mission</a>
+    </div>
+  </section>
+
+  <div id="site-footer-mount"></div>
+
+  <script src="content.js"></script>
+  <script src="common.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const list = document.getElementById('activities-detail-list');
+      SITE.activities.forEach((a, i) => {
+        const flip = i % 2 === 1;
+        list.appendChild(el(`
+          <div class="reveal bg-white rounded-2xl shadow-sm overflow-hidden grid sm:grid-cols-[auto_1fr] gap-0 sm:gap-8 items-center p-7 sm:p-8 ${flip ? 'sm:[&>*:first-child]:order-2' : ''}">
+            <img src="${a.icon}" alt="" class="w-20 h-20 rounded-full object-cover border-4 border-[var(--saffron)]/30 mb-4 sm:mb-0">
+            <div>
+              <span class="tag-eyebrow">✿ Activity ${String(i + 1).padStart(2, '0')}</span>
+              <h2 class="font-display font-bold text-2xl sm:text-3xl text-[var(--text-dark)] mt-2 mb-3">${a.title}</h2>
+              <p class="text-[var(--text-muted)] leading-relaxed">${a.fullDesc}</p>
+            </div>
+          </div>`));
+      });
+      initScrollReveal();
+    });
+  </script>
+</body>
+</html>

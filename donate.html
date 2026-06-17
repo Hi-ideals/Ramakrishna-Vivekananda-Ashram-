@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate — Ramakrishna Vivekananda Ashrama, Bidar</title>
+  <meta name="description" content="Support the spiritual, educational, and welfare mission of Ramakrishna Vivekananda Ashrama, Bidar through your donation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=Lato:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased">
+
+  <div id="site-header-mount"></div>
+
+  <!-- ============ PAGE HEADER ============ -->
+  <section class="relative bg-[var(--primary-dark)] py-20 sm:py-28 overflow-hidden">
+    <div class="absolute inset-0 opacity-25" style="background-image:url('https://picsum.photos/1600/600?random=104');background-size:cover;background-position:center;"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-[var(--primary-dark)] via-[var(--primary-dark)]/70 to-[var(--primary-dark)]/40"></div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <span class="tag-eyebrow" style="color: var(--gold);">✿ Give With Devotion</span>
+      <h1 class="font-display font-bold text-4xl sm:text-6xl text-white mt-3" id="donate-heading"></h1>
+      <p class="text-white/75 mt-4 max-w-xl mx-auto" id="donate-intro-body"></p>
+    </div>
+  </section>
+
+  <!-- ============ INDIAN DONATIONS ============ -->
+  <section id="indian" class="bg-white py-20 scroll-mt-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <span class="tag-eyebrow">✿ For Indian Citizens</span>
+      <h2 class="font-display font-bold text-4xl text-[var(--text-dark)] mt-3 mb-4" id="indian-heading"></h2>
+      <p class="text-[var(--text-muted)] leading-relaxed mb-8" id="indian-desc"></p>
+
+      <div class="bg-[var(--cream)] rounded-2xl p-7 sm:p-9 border-t-4 border-[var(--saffron)]">
+        <h3 class="font-display font-bold text-xl text-[var(--text-dark)] mb-5">Bank Transfer Details</h3>
+        <dl class="grid sm:grid-cols-2 gap-5 text-sm" id="bank-details-grid"></dl>
+      </div>
+
+      <div class="mt-6 flex flex-wrap gap-4">
+        <a href="mailto:rkvabidar@gmail.com?subject=Donation%20Enquiry" class="btn-saffron">Email Us to Donate</a>
+        <a href="tel:+919449274246" class="btn-outline-saffron">Call Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOREIGN DONATIONS ============ -->
+  <section id="foreign" class="py-20 scroll-mt-24" style="background: var(--tan);">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <span class="tag-eyebrow">✿ For Foreign Citizens</span>
+      <h2 class="font-display font-bold text-4xl text-[var(--text-dark)] mt-3 mb-4" id="foreign-heading"></h2>
+      <p class="text-[var(--text-muted)] leading-relaxed mb-8" id="foreign-desc"></p>
+      <a href="mailto:rkvabidar@gmail.com?subject=Foreign%20Donation%20Enquiry" class="btn-saffron">Contact Us for FCRA Details</a>
+    </div>
+  </section>
+
+  <!-- ============ MISSION RECAP ============ -->
+  <section class="quote-section py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center relative">
+      <span class="quote-mark font-display block">&ldquo;</span>
+      <p class="font-display italic text-xl sm:text-2xl text-white/90 leading-relaxed -mt-8" id="donate-mission-body"></p>
+    </div>
+  </section>
+
+  <div id="site-footer-mount"></div>
+
+  <script src="content.js"></script>
+  <script src="common.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const { donate } = SITE;
+      document.getElementById('donate-heading').textContent = donate.heading;
+      document.getElementById('donate-intro-body').textContent = donate.body;
+      document.getElementById('donate-mission-body').textContent = `“${donate.body}”`;
+
+      document.getElementById('indian-heading').textContent = donate.indian.heading;
+      document.getElementById('indian-desc').textContent = donate.indian.desc;
+
+      const bd = donate.indian.bankDetails;
+      const rows = [
+        ['Bank Name', bd.bankName],
+        ['Branch', bd.branch],
+        ['Account Name', bd.accountName],
+        ['Account Number', bd.accountNumber],
+        ['IFSC Code', bd.ifsc],
+        ['UPI ID', bd.upi]
+      ];
+      const grid = document.getElementById('bank-details-grid');
+      rows.forEach(([label, value]) => {
+        grid.appendChild(el(`
+          <div>
+            <dt class="text-[var(--text-muted)] font-semibold mb-0.5">${label}</dt>
+            <dd class="text-[var(--text-dark)] font-semibold">${value}</dd>
+          </div>`));
+      });
+
+      document.getElementById('foreign-heading').textContent = donate.foreign.heading;
+      document.getElementById('foreign-desc').textContent = donate.foreign.desc;
+
+      initScrollReveal();
+    });
+  </script>
+</body>
+</html>

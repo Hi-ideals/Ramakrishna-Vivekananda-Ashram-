@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery — Ramakrishna Vivekananda Ashrama, Bidar</title>
+  <meta name="description" content="Photo and video gallery of activities, festivals, and celebrations at Ramakrishna Vivekananda Ashrama, Bidar.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=Lato:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased">
+
+  <div id="site-header-mount"></div>
+
+  <!-- ============ PAGE HEADER ============ -->
+  <section class="relative bg-[var(--primary-dark)] py-20 sm:py-28 overflow-hidden">
+    <div class="absolute inset-0 opacity-25" style="background-image:url('https://picsum.photos/1600/600?random=105');background-size:cover;background-position:center;"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-[var(--primary-dark)] via-[var(--primary-dark)]/70 to-[var(--primary-dark)]/40"></div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <span class="tag-eyebrow" style="color: var(--gold);">✿ Moments Captured</span>
+      <h1 class="font-display font-bold text-4xl sm:text-6xl text-white mt-3">Gallery</h1>
+      <p class="text-white/75 mt-4 max-w-xl mx-auto">Glimpses of festivals, service activities, and daily life at the Ashrama</p>
+    </div>
+  </section>
+
+  <!-- ============ PHOTO GALLERY ============ -->
+  <section id="photos" class="bg-white py-20 scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+      <span class="tag-eyebrow">✿ Photo Gallery</span>
+      <h2 class="font-display font-bold text-4xl text-[var(--text-dark)] mt-3">Snapshots from the Ashrama</h2>
+      <div class="section-divider on-white"></div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mt-10" id="photo-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============ VIDEO GALLERY ============ -->
+  <section id="videos" class="py-20 scroll-mt-24" style="background: var(--tan);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+      <span class="tag-eyebrow">✿ Video Gallery</span>
+      <h2 class="font-display font-bold text-4xl text-[var(--text-dark)] mt-3">Watch Our Moments</h2>
+      <div class="section-divider on-tan"></div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-10" id="video-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============ LIGHTBOX ============ -->
+  <div class="lightbox-overlay" id="lightbox">
+    <div class="lightbox-close" id="lightbox-close" aria-label="Close">
+      <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current"><path d="M18.3 5.71L12 12.01l-6.3-6.3-1.41 1.41 6.3 6.3-6.3 6.29 1.41 1.41 6.3-6.29 6.3 6.29 1.41-1.41-6.3-6.29 6.3-6.3z"/></svg>
+    </div>
+    <div class="lightbox-nav prev" id="lightbox-prev" aria-label="Previous photo">
+      <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current"><path d="M15 5l-7 7 7 7V5z"/></svg>
+    </div>
+    <div class="lightbox-nav next" id="lightbox-next" aria-label="Next photo">
+      <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current"><path d="M9 5l7 7-7 7V5z"/></svg>
+    </div>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <div id="site-footer-mount"></div>
+
+  <script src="content.js"></script>
+  <script src="common.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const photoGrid = document.getElementById('photo-grid');
+      const photos = SITE.gallery.photos;
+      photos.forEach((p, i) => {
+        const thumb = el(`
+          <div class="gallery-thumb reveal aspect-square" data-idx="${i}">
+            <img src="${p.image}" alt="${p.caption}" class="w-full h-full object-cover">
+          </div>`);
+        thumb.addEventListener('click', () => openLightbox(i));
+        photoGrid.appendChild(thumb);
+      });
+
+      const videoGrid = document.getElementById('video-grid');
+      SITE.gallery.videos.forEach(v => {
+        videoGrid.appendChild(el(`
+          <div class="reveal bg-white rounded-2xl overflow-hidden shadow-sm">
+            <div class="aspect-video">
+              <iframe class="w-full h-full" src="https://www.youtube.com/embed/${v.youtubeId}" title="${v.title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="p-5">
+              <h3 class="font-display font-bold text-lg text-[var(--text-dark)]">${v.title}</h3>
+            </div>
+          </div>`));
+      });
+
+      // lightbox
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      let current = 0;
+
+      function openLightbox(i) {
+        current = i;
+        showImage();
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+      function showImage() {
+        lightboxImg.src = photos[current].image;
+        lightboxImg.alt = photos[current].caption;
+      }
+      function next() { current = (current + 1) % photos.length; showImage(); }
+      function prev() { current = (current - 1 + photos.length) % photos.length; showImage(); }
+
+      document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+      document.getElementById('lightbox-next').addEventListener('click', next);
+      document.getElementById('lightbox-prev').addEventListener('click', prev);
+      lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+      document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') next();
+        if (e.key === 'ArrowLeft') prev();
+      });
+
+      initScrollReveal();
+    });
+  </script>
+</body>
+</html>
