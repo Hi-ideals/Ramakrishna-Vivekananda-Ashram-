@@ -339,22 +339,22 @@
       // To add a new photo, copy one whole { ... } block (including the comma after it) and paste it before the closing ].
       // To remove a photo, delete its whole { ... } block.
       photos: [
-        { image: "https://picsum.photos/600/400?random=80", caption: "Ashrama Activity 1" },
-        { image: "https://picsum.photos/600/400?random=81", caption: "Ashrama Activity 2" },
-        { image: "https://picsum.photos/600/400?random=82", caption: "Ashrama Activity 3" },
-        { image: "https://picsum.photos/600/400?random=83", caption: "Ashrama Activity 4" },
-        { image: "https://picsum.photos/600/400?random=84", caption: "Ashrama Activity 5" },
-        { image: "https://picsum.photos/600/400?random=85", caption: "Ashrama Activity 6" },
-        { image: "https://picsum.photos/600/400?random=86", caption: "Ashrama Activity 7" },
-        { image: "https://picsum.photos/600/400?random=87", caption: "Ashrama Activity 8" },
-        { image: "https://picsum.photos/600/400?random=88", caption: "Ashrama Activity 9" },
-        { image: "https://picsum.photos/600/400?random=89", caption: "Ashrama Activity 10" },
-        { image: "https://picsum.photos/600/400?random=90", caption: "Ashrama Activity 11" },
-        { image: "https://picsum.photos/600/400?random=91", caption: "Ashrama Activity 12" },
-        { image: "https://picsum.photos/600/400?random=92", caption: "Ashrama Activity 13" },
-        { image: "https://picsum.photos/600/400?random=93", caption: "Ashrama Activity 14" },
-        { image: "https://picsum.photos/600/400?random=94", caption: "Ashrama Activity 15" },
-        { image: "https://picsum.photos/600/400?random=95", caption: "Ashrama Activity 16" }
+        { image: "assets/images/Screenshot-496.webp", caption: "Ashrama Activity 1" },
+        { image: "assets/images/Screenshot-497.webp", caption: "Ashrama Activity 2" },
+        { image: "assets/images/Screenshot-498.webp", caption: "Ashrama Activity 3" },
+        { image: "assets/images/Screenshot-499.webp", caption: "Ashrama Activity 4" },
+        { image: "assets/images/Screenshot-500.webp", caption: "Ashrama Activity 5" },
+        { image: "assets/images/Screenshot-501.webp", caption: "Ashrama Activity 6" },
+        { image: "assets/images/Screenshot-502.webp", caption: "Ashrama Activity 7" },
+        { image: "assets/images/Screenshot-504.webp", caption: "Ashrama Activity 8" },
+        { image: "assets/images/Screenshot-505.webp", caption: "Ashrama Activity 9" },
+        { image: "assets/images/Screenshot-507 (1).webp", caption: "Ashrama Activity 10" },
+        { image: "assets/images/Screenshot-509 (1).webp", caption: "Ashrama Activity 11" },
+        { image: "assets/images/Screenshot-510.webp", caption: "Ashrama Activity 12" },
+        { image: "assets/images/Screenshot-512.webp", caption: "Ashrama Activity 13" },
+        { image: "assets/images/Screenshot-513.webp", caption: "Ashrama Activity 14" },
+        { image: "assets/images/Screenshot-523.webp", caption: "Ashrama Activity 15" },
+        { image: "assets/images/Screenshot-526.webp", caption: "Ashrama Activity 16" }
       ],
       videos: [
         { title: "Swami Vivekananda Jayanti 2024", youtubeId: "Qkm4zwVxrK4" },
