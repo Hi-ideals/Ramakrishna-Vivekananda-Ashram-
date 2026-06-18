@@ -70,31 +70,31 @@
   
     hero: [
       {
-        image: "https://picsum.photos/1600/800?random=1",
+      image: "assets/images/Ashram1.webp",
         heading: "Welcome to Ramakrishna Vivekananda Ashrama",
         subheading: "A hub for meditation, education, and service activities inspired by Vedanta philosophy",
         cta: { label: "Know More", href: "about.html" }
       },
       {
-        image: "https://picsum.photos/1600/800?random=2",
+      image: "assets/images/Ashram2.webp",
         heading: "Serving Humanity is Serving God",
         subheading: "Inspired by the teachings of Sri Ramakrishna and Swami Vivekananda",
         cta: { label: "Our Activities", href: "activities.html" }
       },
       {
-        image: "https://picsum.photos/1600/800?random=3",
+      image: "assets/images/Ashram3.webp",
         heading: "Spiritual Seekers Welcome",
         subheading: "Join us for daily arati, meditation, scriptural classes, and festivals",
         cta: { label: "Visit Us", href: "contact.html" }
       },
       {
-        image: "https://picsum.photos/1600/800?random=4",
+      image: "assets/images/Goshala-14.webp",
         heading: "Empowering Youth Through Education",
         subheading: "Scholarships, value-based programs, and youth camps for a better tomorrow",
         cta: { label: "Learn More", href: "activities.html" }
       },
       {
-        image: "https://picsum.photos/1600/800?random=5",
+      image: "assets/images/Screenshot-509.webp",
         heading: "Support Our Sacred Mission",
         subheading: "Your contribution helps educate children and serve the underprivileged",
         cta: { label: "Donate Now", href: "donate.html" }
@@ -132,9 +132,9 @@
       motto: "Atmano Mokshartham Jagad Hitaya Cha",
       mottoTranslation: "For one's own liberation and for the welfare of the world",
       images: [
-        "https://picsum.photos/400/300?random=10",
-        "https://picsum.photos/400/300?random=11",
-        "https://picsum.photos/400/300?random=12"
+      "assets/images/Screenshot-525.webp",
+      "assets/images/Screenshot-523.webp",
+      "assets/images/Screenshot-523.webp"
       ],
       ideals: [
         { title: "Work as Worship", desc: "Serving humanity as a form of divine worship." },
@@ -152,7 +152,7 @@
         id: "vivekananda",
         name: "Swami Vivekananda",
         years: "1863–1902",
-        image: "https://picsum.photos/400/500?random=20",
+      image: "assets/images/Swami_Vivekananda_Jaipur.webp",
         bio: "Swami Vivekananda was a key figure in the introduction of Indian philosophies of Vedanta and Yoga to the Western world. He was a chief disciple of Sri Ramakrishna and the founder of Ramakrishna Math and Ramakrishna Mission. His message of strength, self-reliance, and service to humanity continues to inspire millions worldwide.",
         extendedBio: "Born Narendranath Datta in Calcutta, he became the foremost disciple of Sri Ramakrishna and carried his master's message of the harmony of religions to the world stage at the 1893 Parliament of Religions in Chicago. He founded the Ramakrishna Mission in 1897 to combine spiritual practice with social service, famously declaring that service to humanity is itself a path to the divine. His writings and lectures remain foundational texts for the modern understanding of Vedanta.",
         quote: "Arise, awake and stop not until the goal is reached."
@@ -161,7 +161,7 @@
         id: "ramakrishna",
         name: "Sri Ramakrishna",
         years: "1836–1886",
-        image: "https://picsum.photos/400/500?random=21",
+      image: "assets/images/ramkrishan.webp",
         bio: "Sri Ramakrishna Paramahamsa was a 19th-century Indian mystic and saint who is regarded as a pivotal figure in the revival of Hinduism in modern India. His message emphasized the harmony of all religions and the attainment of God through different paths. He inspired generations with his direct experience of the divine.",
         extendedBio: "A priest at the Dakshineswar Kali Temple near Calcutta, Sri Ramakrishna practiced the disciplines of multiple religious traditions, including Christianity and Islam, and arrived at the realization that all paths lead to the same divine truth. His simple parables and direct spiritual experience drew a circle of devoted disciples, chief among them Narendranath Datta, who would become Swami Vivekananda and carry his teachings to the world.",
         quote: "The winds of grace are always blowing, but you have to raise the sail."
@@ -170,7 +170,7 @@
         id: "sarada",
         name: "Sri Sarada Devi",
         years: "1853–1920",
-        image: "https://picsum.photos/400/500?random=22",
+      image: "assets/images/Sri-Sarada-Devi.webp",
         bio: "Sri Sarada Devi, known as the Holy Mother, was the spiritual consort of Sri Ramakrishna. She is revered as the ideal of motherhood, purity, and compassion. Her teachings emphasized love, forgiveness, and the universal motherhood of God. She is considered the spiritual mother of all members of the Ramakrishna Order.",
         extendedBio: "After Sri Ramakrishna's passing, the Holy Mother became the guiding spiritual presence for his disciples, including Swami Vivekananda, who regarded her counsel as essential to the growth of the young Ramakrishna Order. Known for her boundless compassion and quiet strength, she treated all who came to her, regardless of caste or background, as her own children, embodying in practice the ideal of universal motherhood that she taught.",
         quote: "If you want peace, then do not look into the faults of others."
@@ -179,37 +179,37 @@
   
     activities: [
       {
-        icon: "https://picsum.photos/80/80?random=30",
+      icon: "assets/images/rkIcon1.png",
         title: "Spiritual Activities",
         shortDesc: "Daily Worship and Aarti, Meditation & Scriptural Classes, Festivals & Observances.",
         fullDesc: "Regular prayers, bhajans, and evening arati are performed at the shrine. Guided meditation sessions, group chanting, and study classes on the Bhagavad Gita, Upanishads, and the Complete Works of Swami Vivekananda. Celebration of Sri Ramakrishna Jayanti, Swami Vivekananda Jayanti (National Youth Day), Holy Mother Sarada Devi Jayanti, Kalpataru Day, Guru Purnima, and other cultural events."
       },
       {
-        icon: "https://picsum.photos/80/80?random=31",
+      icon: "assets/images/Goshal-1.webp",
         title: "Goshala",
         shortDesc: "Feeding, medical care, and maintaining a safe environment for every cow.",
         fullDesc: "Our Goshala is a sanctuary for cows, reflecting the ancient Indian tradition of reverence for all life. We provide daily feeding, regular veterinary care, and a safe, clean environment. The Goshala is open to visitors and devotees who wish to participate in cow service as a spiritual practice."
       },
       {
-        icon: "https://picsum.photos/80/80?random=32",
+      icon: "assets/images/rkIcon2.png",
         title: "Educational Support",
         shortDesc: "Value-Based Education Programs, Scholarships, Workshops & Youth Camps.",
         fullDesc: "Value-Based Education Programs for students promoting character building, discipline, and moral values. Scholarships and Educational Aid for economically challenged but deserving students. Workshops and Youth Camps to inspire self-confidence, leadership, and patriotism among the youth."
       },
       {
-        icon: "https://picsum.photos/80/80?random=33",
+      icon: "assets/images/Social-Welfare-Activities.png",
         title: "Social & Welfare Activities",
         shortDesc: "Free Health Camps, Distribution of essentials, Relief Work.",
         fullDesc: "Free Health Camps in rural areas around Bidar. Distribution of Clothes, Books, and Essentials to underprivileged communities. Relief Work during natural calamities in nearby regions. These activities embody the Ashrama's core belief in serving God through service to mankind."
       },
       {
-        icon: "https://picsum.photos/80/80?random=34",
+      icon: "assets/images/rkIcon3.png",
         title: "Book Sales",
         shortDesc: "Spiritual literature including teachings of Sri Ramakrishna, Sarada Devi, and Swami Vivekananda.",
         fullDesc: "The Ashrama provides a wide range of spiritual literature including the teachings of Sri Ramakrishna, Holy Mother Sarada Devi, Swami Vivekananda, and other Vedantic texts. Books are available at the Ashrama premises. These publications serve as a means to spread spiritual knowledge and moral values."
       },
       {
-        icon: "https://picsum.photos/80/80?random=35",
+      icon: "assets/images/rkIcon1.png",
         title: "Yoga & Naturopathy Camps",
         shortDesc: "Free yoga and naturopathy camps for holistic health and wellness.",
         fullDesc: "We organize free yoga and naturopathy camps to promote holistic health and wellness for the community. These camps are open to all and are conducted by experienced practitioners in a serene, spiritually uplifting environment at the Ashrama."
@@ -219,7 +219,7 @@
     dailyQuote: {
       text: "The moment I have realized God sitting in the temple of every human body, the moment I stand in reverence before every human being and see God in him — that moment I am free from bondage, everything that binds vanishes, and I am free.",
       author: "Swami Vivekananda",
-      image: "https://picsum.photos/200/200?random=40"
+    image: "assets/images/Vivekanada.webp"
     },
   
     aratiTimings: [
@@ -227,35 +227,35 @@
         title: "Morning Arati",
         time: "6:00 AM",
         icon: "🌅",
-        image: "https://picsum.photos/400/300?random=50"
+      image: "assets/images/Screenshot-501.webp"
       },
       {
         title: "Evening Arati",
         time: "6:30 PM – 7:00 PM",
         icon: "🪔",
-        image: "https://picsum.photos/400/300?random=51"
+      image: "assets/images/moring.webp"
       },
       {
         title: "Special Days Arati",
         time: "6:00 PM – 7:00 PM",
         icon: "✨",
-        image: "https://picsum.photos/400/300?random=52"
+      image: "assets/images/Arati.webp"
       }
     ],
   
     donate: {
       heading: "Support Our Sacred Mission",
       body: "The ideology of Ramakrishna Vivekananda Ashrama Bidar finds expression through our multifarious activities — whether it be educating students at a school or nursing patients in a medical facility — each is considered a form of worship. All these activities are carried out as service — service to God in man.",
-      image: "https://picsum.photos/700/700?random=55",
+    image: "assets/images/rkvsa-1.webp",
       indian: {
         heading: "Donations – Indian Citizens",
         desc: "Indian donors can contribute via bank transfer, UPI, or cheque. All donations are eligible for tax exemption under 80G of the Income Tax Act.",
         bankDetails: {
           bankName: "State Bank of India",
-          branch: "Bidar Main Branch",
+        branch: "Noubad, Bidar",
           accountName: "Ramakrishna Vivekananda Ashrama Bidar",
-          accountNumber: "XXXXXXXXXXXX",
-          ifsc: "SBIN0XXXXXX",
+        accountNumber: " 30118412023",
+        ifsc: "585002402",
           upi: "rkvabidar@sbi"
         }
       },
@@ -267,7 +267,7 @@
   
     news: [
       {
-        image: "https://picsum.photos/630/408?random=60",
+      image: "assets/images/samilana.webp",
         date: "2018-11-15",
         title: "126th Swami Vivekananda Jayanti Celebration at Bidar",
         excerpt: "The Ramakrishna Vivekananda Ashrama, Shivanagar, Bidar organized the 126th Swami Vivekananda Jayanti with great devotion and enthusiasm.",
@@ -275,7 +275,7 @@
         link: "#"
       },
       {
-        image: "https://picsum.photos/630/408?random=61",
+      image: "assets/images/Vashant-1.webp",
         date: "2023-05-07",
         title: "2nd Batch Vasantha Vihara 2023 – A Nine-Day Spiritual Retreat",
         excerpt: "The Ashrama organized the 2nd Batch of Vasantha Vihara, a nine-day spiritual retreat drawing seekers from across Karnataka.",
@@ -283,37 +283,14 @@
         link: "#"
       },
       {
-        image: "https://picsum.photos/630/408?random=62",
+      image: "assets/images/adikmass.webp",
         date: "2023-05-13",
         title: "Adhyatmika Pravachana at Ramakrishna Vivekananda Ashrama, Bidar",
         excerpt: "The Ashrama hosted a three-day Adhyatmika Pravachana series featuring senior monks and spiritual scholars.",
         body: "The Ashrama hosted a three-day Adhyatmika Pravachana series featuring senior monks and spiritual scholars from the Ramakrishna Order. Each evening session covered a different theme from Vedantic philosophy, followed by a question-and-answer period for attendees. The series concluded with a special evening arati and community feast.",
         link: "#"
-      },
-      {
-        image: "https://picsum.photos/630/408?random=63",
-        date: "2024-01-12",
-        title: "National Youth Day Celebrations – Vivekananda Jayanti 2024",
-        excerpt: "The Ashrama observed National Youth Day with cultural programs, talks, and a torchlight procession honoring Swami Vivekananda.",
-        body: "The Ashrama observed National Youth Day with cultural programs, talks, and a torchlight procession honoring Swami Vivekananda. Students from local schools participated in elocution and essay competitions on the theme of youth empowerment, with prizes distributed at a closing ceremony attended by community leaders.",
-        link: "#"
-      },
-      {
-        image: "https://picsum.photos/630/408?random=64",
-        date: "2024-03-10",
-        title: "Free Health Camp – Rural Bidar District",
-        excerpt: "A free health camp was conducted in a rural village near Bidar providing medical consultations, medicines, and health awareness.",
-        body: "A free health camp was conducted in a rural village near Bidar providing medical consultations, medicines, and health awareness sessions. Volunteer doctors and nurses examined over two hundred patients, with free medicines dispensed on-site and referrals arranged for cases requiring further treatment.",
-        link: "#"
-      },
-      {
-        image: "https://picsum.photos/630/408?random=65",
-        date: "2024-08-20",
-        title: "Annual Guru Purnima Celebrations at the Ashrama",
-        excerpt: "Guru Purnima was observed with special pujas, discourses, and a community gathering of devotees from across the region.",
-        body: "Guru Purnima was observed with special pujas, discourses, and a community gathering of devotees from across the region. The day began with a ceremonial worship of the guru parampara, followed by talks on the significance of the guru-disciple relationship in spiritual life, and concluded with a communal meal for all visitors.",
-        link: "#"
       }
+      
     ],
   
     testimonials: [
